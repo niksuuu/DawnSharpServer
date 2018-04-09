@@ -26,7 +26,7 @@ socket.on("data",function(dataObject){
         var jsonString = JSON.parse(dataObject);
     } catch (e) {
         console.log("not JSON");
-        socket.send("okay!");
+        socket.write("okay!");
         return;
     }
     console.log("Data from %s: %s ".green,connAdress,dataObject);
