@@ -14,7 +14,7 @@ const requestHandler = (request, response) => {
 
 const httpserver = http.createServer(requestHandler)
 
-httpserver.listen(8080);
+//httpserver.listen(8080);
 
 server.on("connection",function(socket){
 var connAdress = socket.remoteAddress + ":" + socket.remotePort;
