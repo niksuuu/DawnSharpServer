@@ -14,7 +14,7 @@ const requestHandler = (request, response) => {
 
 const httpserver = http.createServer(requestHandler)
 
-//httpserver.listen(8080);
+httpserver.listen(8080);
 
 server.on("connection",function(socket){
 var connAdress = socket.remoteAddress + ":" + socket.remotePort;
@@ -26,7 +26,6 @@ socket.on("data",function(dataObject){
         var jsonString = JSON.parse(dataObject);
     } catch (e) {
         console.log("not JSON");
-        socket.write("okay!");
         return;
     }
     console.log("Data from %s: %s ".green,connAdress,dataObject);
