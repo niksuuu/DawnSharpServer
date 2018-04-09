@@ -2,7 +2,7 @@ var net = require("net");
 var colors = require("colors");
 var server = net.createServer();
 var mongoose = require("mongoose");
-var port = 4040;
+var port = 5014;
 var isServerActive = true;
 
 var http = require('http');
