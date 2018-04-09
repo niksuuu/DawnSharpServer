@@ -8,7 +8,7 @@ var isServerActive = true;
 var http = require('http');
 
 const requestHandler = (request, response) => {
-    console.log(request.url);
+    console.log("123");
     response.end('Hello Node.js Server!');
   };
 
