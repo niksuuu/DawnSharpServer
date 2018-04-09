@@ -2,7 +2,7 @@ var net = require("net");
 var colors = require("colors");
 var server = net.createServer();
 var mongoose = require("mongoose");
-var port = 1456;
+var port = 8080;
 var isServerActive = true;
 
 var http = require('http');
@@ -14,7 +14,7 @@ const requestHandler = (request, response) => {
 
 const httpserver = http.createServer(requestHandler)
 
-httpserver.listen(8080);
+//httpserver.listen(8080);
 
 server.on("connection",function(socket){
 var connAdress = socket.remoteAddress + ":" + socket.remotePort;
