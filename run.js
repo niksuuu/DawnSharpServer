@@ -2,11 +2,21 @@ var net = require("net");
 var colors = require("colors");
 var server = net.createServer();
 var mongoose = require("mongoose");
-var port = 8080;
+var port = 1456;
 var isServerActive = true;
 
-server.on("connection",function(socket){
+var http = require('http');
 
+const requestHandler = (request, response) => {
+    console.log(request.url);
+    response.end('Hello Node.js Server!');
+  };
+
+const httpserver = http.createServer(requestHandler)
+
+httpserver.listen(8080);
+
+server.on("connection",function(socket){
 var connAdress = socket.remoteAddress + ":" + socket.remotePort;
 console.log("New Client Connected : ".green,connAdress);
 
