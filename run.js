@@ -11,7 +11,13 @@ var connAdress = socket.remoteAddress + ":" + socket.remotePort;
 console.log("New Client Connected : ".green,connAdress);
 
 socket.on("data",function(dataObject){
-    var jsonString = JSON.parse(dataObject);
+    var jsonString;
+    try {
+        var jsonString = JSON.parse(dataObject);
+    } catch (e) {
+        console.log("not JSON");
+        return;
+    }
     console.log("Data from %s: %s ".green,connAdress,dataObject);
     if(jsonString.Command == "Login")
     {
