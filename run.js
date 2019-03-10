@@ -2,14 +2,12 @@ var net = require("net");
 var colors = require("colors");
 var server = net.createServer();
 var mongoose = require("mongoose");
-var port = 443;
+var port = process.env.PORT || 1456;
 var isServerActive = true;
 
 var http = require('http');
 
 const requestHandler = (request, response) => {
-    console.log("123");
-    response.end('Hello Node.js Server!');
   };
 
 const httpserver = http.createServer(requestHandler)
