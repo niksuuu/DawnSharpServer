@@ -23,7 +23,7 @@ socket.on("data",function(dataObject){
     try {
         var jsonString = JSON.parse(dataObject);
     } catch (e) {
-        console.log("not JSON");
+        console.log("not JSON " + socket.remotePort);
         return;
     }
     console.log("Data from %s: %s ".green,connAdress,dataObject);
